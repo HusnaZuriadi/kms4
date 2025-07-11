@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+/* General Reset & Body */
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.headertop {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100px;
+}
+
+
+
+.logo img {
+    height: 26%;
+    width: 20%;
+    justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+   justify-content: center;
+}
+
+header {
+      background-color: #88c34e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: fixed;
+      top:0;
+      z-index: 2;
+    }
+    
+    /* Header logo image */
+.navbar img {
+  max-height: 40px;
+  user-select: none;
+}
+.navSidebar {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
+    }
+
+/* Sidebar toggle button */
+.navSidebar {
+  font-size: 28px; /* bigger toggle icon */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  padding: 6px 10px; /* easier to click */
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.navSidebar:hover,
+.navSidebar:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.navSidebar:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-weight: 600;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.7rem; /* larger logo text */
+  user-select: none;
+}
+
+.navbar span {
+  font-weight: 700;
+  color: #e91e63;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px; /* slightly wider to match padding */
+  height: 100vh;
+  width: 260px;
+  background-color: #88c34e;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px; /* space for taller header */
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+/* Profile section */
+.profile {
+  margin: 15px 0 35px 0;
+  text-align: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 90px; /* bigger profile image */
+  height: 90px;
+  object-fit: cover;
+  border: 3px solid #d0e8a6;
+  margin-bottom: 12px;
+}
+
+.profile h3 {
+  font-size: 1.3rem; /* bigger name */
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.profile p {
+  font-size: 1rem; /* readable role text */
+  color: #d0e8a6;
+  letter-spacing: 0.03em;
+}
+
+/* Sidebar links */
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem; /* larger link text */
+  font-weight: 600;
+}
+
+.sidebar-links.bottom-links {
+  margin-top: auto; /* push bottom links to bottom */
+}
+
+.sidebar-links.top-links li,
+.sidebar-links.bottom-links li {
+  flex-grow: 1;
+  display: flex;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.15rem;
+  border-left: 5px solid transparent;
+  width: 100%;
+  transition: background-color 0.3s, border-left-color 0.3s;
+  letter-spacing: 0.02em;
+  min-height: 44px; /* ensure good touch size */
+}
+
+.sidebar-links li a i {
+  margin-right: 18px;
+  color: #d0e8a6;
+  min-width: 26px;
+  text-align: center;
+  font-size: 20px; /* bigger icons */
+}
+
+/* Hover and focus */
+.sidebar-links li a:hover,
+.sidebar-links li a:focus {
+  background-color: #6fa42e;
+  border-left: 5px solid #d0e8a6;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  outline: none;
+}
+
+.sidebar-links li a:focus {
+  outline: 3px solid #d0e8a6;
+  outline-offset: 2px;
+}
+
+/* Active link style */
+.sidebar-links li a.active {
+  background-color: #6fa42e;
+  border-left-color: #fff;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Separator line */
+._separator_1e1cy_1 {
+  width: 90%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 25px auto;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+
+/* Content Area */
+.content {
+  background-color: white;
+  margin: 30px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #f5cccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f8f8f8;
+}
+
+.status-present {
+  color: green;
+  font-weight: bold;
+}
+
+.status-absent {
+  color: red;
+  font-weight: bold;
+}
+
+/* Summary Boxes */
+.summary-boxes {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px;
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.box .count {
+  font-size: 28px;
+}
+
+.pink {
+  background-color: #FFB6C1;
+}
+
+.green {
+  background-color: #90EE90;
+}
+
+.yellow {
+  background-color: #FFFF99;
+}
+
+/* Filter Form */
+.filter-form {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter-form input[type="date"],
+select {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.filter-form button {
+  padding: 6px 16px;
+  background-color: #7ac142;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-form button:hover {
+  background-color: #6ba236;
+}
+
+/* Add Record Button */
+.add-record-container {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.add-record-btn {
+  background-color: #00cfff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.add-record-btn:hover {
+  background-color: #00b3dd;
+}
+
+/* Table Actions */
+.actions i {
+  font-size: 18px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.actions .edit {
+  color: #333;
+}
+
+.actions .delete {
+  color: red;
+}

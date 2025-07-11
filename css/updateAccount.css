@@ -1,0 +1,718 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #efefe7;
+    min-height: 100vh;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Top Navigation - HCI: Clear navigation path */
+.topNav {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+    border-bottom: 3px solid #9dd45e;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #88c34e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.25rem;
+    border-radius: 16px;
+    border: 2px solid transparent;
+}
+
+.backLink:hover {
+    background: #f6f9f3;
+    color: #76a33e;
+    transform: translateX(-5px);
+    border-color: #88c34e;
+}
+
+.backLink:focus {
+    outline: 3px solid #88c34e;
+    outline-offset: 2px;
+}
+
+.backLink i {
+    font-size: 1.1rem;
+}
+
+/* Page Container */
+.pageContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Page Header - HCI: Clear visual hierarchy */
+.pageHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+    border: 2px solid #e0e0e0;
+}
+
+.headerIcon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #88c34e, #9dd45e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(136, 195, 78, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+.headerIcon i {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.pageHeader h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.pageHeader p {
+    font-size: 1.1rem;
+    color: #34495e;
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Form Card - HCI: Grouped related content */
+.formCard {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+    border: 2px solid #e0e0e0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.formCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #88c34e, #9dd45e, #f491ba);
+    border-radius: 20px 20px 0 0;
+}
+
+/* Photo Section - HCI: Visual feedback for interactions */
+.photoSection {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 3px solid #f8f9fa;
+}
+
+.currentPhoto {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #88c34e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(136, 195, 78, 0.2);
+}
+
+.currentPhoto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(136, 195, 78, 0.3);
+    border-color: #76a33e;
+}
+
+.currentPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(136, 195, 78, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.currentPhoto:hover .photoOverlay {
+    opacity: 1;
+}
+
+.photoOverlay i {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.photoOverlay span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.photoControls {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.photoButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #88c34e;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.photoButton:hover {
+    background: #76a33e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(136, 195, 78, 0.3);
+}
+
+.photoButton:focus {
+    outline: 3px solid #88c34e;
+    outline-offset: 2px;
+}
+
+.removePhotoBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f491ba;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.removePhotoBtn:hover {
+    background: #e8a5c4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 145, 186, 0.3);
+}
+
+.removePhotoBtn:focus {
+    outline: 3px solid #f491ba;
+    outline-offset: 2px;
+}
+
+.photoInfo {
+    color: #34495e;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #f8f9fa;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.photoInfo i {
+    color: #88c34e;
+    margin-right: 0.5rem;
+}
+
+/* Form Section - HCI: Clear section organization */
+.formSection {
+    margin-bottom: 3rem;
+}
+
+.formSection h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f8f9fa;
+}
+
+.formSection h3 i {
+    color: #88c34e;
+    font-size: 1.2rem;
+}
+
+.formSection:nth-child(even) h3 i {
+    color: #f491ba;
+}
+
+/* Input Groups - HCI: Clear labels and helpful feedback */
+.inputGroup {
+    margin-bottom: 2rem;
+}
+
+.inputGroup label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #88c34e;
+    box-shadow: 0 0 0 3px rgba(136, 195, 78, 0.1);
+    background: white;
+}
+
+.inputGroup input:valid:not(:placeholder-shown) {
+    border-color: #88c34e;
+    background: #f6f9f3;
+}
+
+.inputGroup input::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.inputHelp {
+    display: block;
+    font-size: 0.85rem;
+    color: #34495e;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-weight: 500;
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #88c34e;
+}
+
+/* Action Buttons - HCI: Clear primary actions */
+.actionButtons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 3px solid #f8f9fa;
+}
+
+.actionButtons button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: inherit;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.cancelBtn {
+    background: #f8f9fa;
+    color: #34495e;
+    border: 2px solid #e0e0e0;
+}
+
+.cancelBtn:hover {
+    background: #e0e0e0;
+    color: #2c3e50;
+    transform: translateY(-2px);
+}
+
+.resetBtn {
+    background: #f491ba;
+    color: white;
+}
+
+.resetBtn:hover {
+    background: #e8a5c4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 145, 186, 0.3);
+}
+
+.saveBtn {
+    background: linear-gradient(135deg, #88c34e, #9dd45e);
+    color: white;
+    font-weight: 700;
+}
+
+.saveBtn:hover {
+    background: linear-gradient(135deg, #76a33e, #88c34e);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(136, 195, 78, 0.4);
+}
+
+.actionButtons button:focus {
+    outline: 3px solid #88c34e;
+    outline-offset: 2px;
+}
+
+/* Help Section - HCI: Contextual help */
+.helpSection {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 20px rgba(136, 195, 78, 0.10);
+    border-left: 6px solid #88c34e;
+}
+
+.helpSection h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.helpSection h4 i {
+    color: #88c34e;
+    font-size: 1.1rem;
+}
+
+.helpSection ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.helpSection li {
+    margin-bottom: 0.75rem;
+    padding-left: 2rem;
+    position: relative;
+    color: #34495e;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.helpSection li::before {
+    content: '✓';
+    color: #88c34e;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* Loading Overlay - HCI: Clear feedback */
+.loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(136, 195, 78, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.loadingContent {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 2px solid #88c34e;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f8f9fa;
+    border-top: 4px solid #88c34e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingContent p {
+    margin: 0;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Success Modal - HCI: Clear success feedback */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(136, 195, 78, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.modalContent {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.4s ease;
+    border: 2px solid #88c34e;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.successIcon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #88c34e, #9dd45e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: 0 8px 25px rgba(136, 195, 78, 0.3);
+}
+
+.successIcon i {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.modalContent h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.modalContent p {
+    color: #34495e;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.okBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #88c34e, #9dd45e);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.okBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(136, 195, 78, 0.4);
+}
+
+.okBtn:focus {
+    outline: 3px solid #88c34e;
+    outline-offset: 2px;
+}
+
+/* Responsive Design - HCI: Mobile-first approach */
+@media (max-width: 768px) {
+    .pageContainer {
+        padding: 1rem;
+    }
+    
+    .formCard {
+        padding: 2rem;
+    }
+    
+    .pageHeader {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .pageHeader h1 {
+        font-size: 2rem;
+    }
+    
+    .actionButtons {
+        flex-direction: column;
+    }
+    
+    .actionButtons button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .photoControls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .currentPhoto {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topNav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .formCard {
+        padding: 1.5rem;
+    }
+    
+    .headerIcon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1rem;
+    }
+    
+    .headerIcon i {
+        font-size: 1.8rem;
+    }
+    
+    .currentPhoto {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .pageHeader h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Accessibility - HCI: Universal design */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .inputGroup input {
+        border-width: 3px;
+    }
+    
+    .actionButtons button {
+        border-width: 3px;
+    }
+}
+
+/* Focus visible for better keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+.photoButton:focus-visible {
+    outline: 3px solid #88c34e;
+    outline-offset: 3px;
+}
+
+/* Error states - HCI: Clear error feedback */
+.inputGroup input:invalid:not(:placeholder-shown) {
+    border-color: #f491ba;
+    background: #fef7f7;
+}
+
+.inputGroup input:invalid:not(:placeholder-shown) + .inputHelp {
+    border-left-color: #f491ba;
+    background: #fef7f7;
+}

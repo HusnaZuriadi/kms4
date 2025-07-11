@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account - Parent</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/createParent.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-panel">
+      <img src="images/sign up.png" alt="Kids" />
+    </div>
+
+    <div class="right-panel">
+      <h2>Create Account</h2>
+      <form action="createParentController" method="post">
+
+        <label>Full Name<span style="color: red;"> *</span></label>
+        <input type="text" name="name" placeholder="Full name" required>
+
+        <label>Email<span style="color: red;"> *</span></label>
+        <input type="email" name="email" placeholder="abc@gmail.com" required>
+
+        <label>Phone Number<span style="color: red;"> *</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="011-1234567" maxlength="11" required> 
+        
+        <label>Password<span style="color: red;"> *</span></label>
+		<input type="password" id="password" name="password" required>
+		<small id="passwordHint" style="color: gray;"> * At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 symbol.</small>
+		<small id="passwordStrength" ></small>
+
+		<label>Confirm Password<span style="color: red;"> *</span></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+
+        <button type="submit">Create Account</button>
+
+		<div class="login">
+					Already have an account? <a href="login.jsp">Log in</a>
+		</div>
+		
+	</form>
+   </div>
+  </div>
+  
+  <!-- Modal Pop-Up -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <div class="emoji">🎉🧒🏻👧🏼✨</div>
+    <h2>Account Created!</h2>
+    <p>Welcome to Al-Kauthar EduQids 🎈<br>Your parenting journey begins here!</p>
+    <button onclick="closeModal()">Yay!</button>
+  </div>
+</div>
+  
+
+  <!-- JavaScript to check password match -->
+  <script src="js/createParent.js"> </script>
+
+</body>
+</html>

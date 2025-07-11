@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Kauthar Kindergarten - Nurturing Young Minds</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  
+ <header id="mainHeader">
+  <div class="header-container">
+    
+    <!-- LOGO di tengah (guna absolute) -->
+    <div class="logo-section">
+      <img src="images/LOGO-AL-KAUTHAR-EDUQIDS.png" alt="Al Kauthar EduQids Logo" />
+    </div>
+
+    <!-- BUTTONS duduk kanan -->
+    <div class="buttonBox">
+      <a href="login.jsp" class="simpleButton">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+      <div class="menuBox">
+        <button class="menuButton" onclick="showMenu()">
+          <i class="fas fa-user-plus"></i>
+          Create Account 
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="menuList" id="menuList">
+          <a href="createParent.html"><i class="fas fa-users"></i> <span>Parent Account</span></a>
+          <a href="CreateAccTController"><i class="fas fa-chalkboard-teacher"></i> <span>Teacher Account</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+  <section class="mainBanner">
+    <div class="bannerText">
+      <h1>Welcome to Al-Kauthar Kindergarten</h1>
+      <p>Nurturing young minds with care, creativity, and Islamic values in a safe, loving environment where every child can thrive</p>
+      <div class="bannerButtons">
+        <a href="createParent.html" class="bannerButton">
+          <i class="fas fa-child"></i>
+          Enroll Your Child
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="aboutSection" class="aboutBox">
+    <div class="contentBox">
+      <div class="aboutGrid">
+        <div class="imageBox">
+          <img src="images/AlkautharSchool.jpg" alt="Al-Kauthar Kindergarten classroom">
+        </div>
+        <div class="textBox">
+          <h2>About Us</h2>
+          <p>
+            Al-Kauthar EduQids is a kindergarten established to provide a safe, nurturing, and stimulating early learning environment for young children. We offer comprehensive foundational education including reading, writing, mathematics, and age-appropriate developmental activities.
+          </p>
+          <p>
+            We proudly serve children aged <span class="colorText">4 to 6 years old</span> and provide diverse, engaging activities designed to support their social, emotional, and intellectual development. Our learning approach combines modern educational methods with Islamic values in a caring environment that encourages exploration and joyful learning experiences.
+          </p>
+          <p>
+            With our <span class="colorText">experienced and caring educators</span>, we ensure each child receives personalized attention, guidance, and support throughout their kindergarten journey, preparing them for future academic success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featuresBox">
+    <div class="contentBox">
+      <h2>Why Choose Al-Kauthar?</h2>
+      <div class="featuresGrid">
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Caring Environment</h3>
+          <p>Safe and nurturing space where children feel loved, valued, and supported in their learning journey with dedicated care and attention.</p>
+        </div>
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Qualified Educators</h3>
+          <p>Experienced and certified teachers dedicated to providing quality early childhood education with proven teaching methodologies.</p>
+        </div>
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Social Development</h3>
+          <p>Carefully designed activities that enhance social skills, teamwork, communication, and emotional intelligence through interactive play.</p>
+        </div>
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Cognitive Growth</h3>
+          <p>Structured learning programs that stimulate curiosity, critical thinking, and cognitive development through hands-on activities.</p>
+        </div>
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-mosque"></i>
+          </div>
+          <h3>Islamic Values</h3>
+          <p>Integration of Islamic teachings and values into daily activities, fostering moral development and spiritual growth.</p>
+        </div>
+        <div class="featureCard">
+          <div class="cardIcon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safe Environment</h3>
+          <p>Secure and clean facilities with proper safety measures, giving parents peace of mind about their child's wellbeing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="accountBox">
+    <div class="contentBox">
+      <h2>Join Our Growing Family</h2>
+      <p>Be part of our community of dedicated educators and loving parents committed to nurturing young minds and shaping bright futures.</p>
+      <div class="accountButtons">
+        <a href="createParent.html" class="whiteButton">
+          <i class="fas fa-user-plus"></i>
+          Create Parent Account
+        </a>
+        <a href="CreateAccTController" class="whiteButton">
+          <i class="fas fa-chalkboard-teacher"></i>
+          Create Teacher Account
+        </a>
+      </div>
+      <div class="loginBox">
+        <p>Already have an account?</p>
+        <a href="login.jsp" class="whiteButton">
+          <i class="fas fa-sign-in-alt"></i>
+          Login Here
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galleryBox">
+    <div class="contentBox">
+      <h2>Our Happy Moments</h2>
+      <div class="galleryGrid">
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Children engaged in creative art activities">
+          <div class="galleryText">
+            <h4>Creative Arts</h4>
+            <p>Expressing creativity through art and crafts</p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Children enjoying outdoor playtime">
+          <div class="galleryText">
+            <h4>Outdoor Play</h4>
+            <p>Physical development through fun activities</p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Quiet reading time in library">
+          <div class="galleryText">
+            <h4>Reading Time</h4>
+            <p>Building literacy skills through storytelling</p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Interactive learning session">
+          <div class="galleryText">
+            <h4>Interactive Learning</h4>
+            <p>Hands-on learning with educational games</p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Group activities">
+          <div class="galleryText">
+            <h4>Team Activities</h4>
+            <p>Building social skills through collaboration</p>
+          </div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/kindergarten3.jpg" alt="Celebrating achievements">
+          <div class="galleryText">
+            <h4>Celebrations</h4>
+            <p>Recognizing achievements and milestones</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  function showMenu() {
+    var menu = document.getElementById("menuList");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+
+  // Scroll animation for sections
+  function checkScroll() {
+    var sections = document.querySelectorAll('.aboutBox, .featuresBox, .accountBox, .galleryBox');
+    
+    for (var i = 0; i < sections.length; i++) {
+      var section = sections[i];
+      var sectionTop = section.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+      
+      if (sectionTop < windowHeight - 100) {
+        section.classList.add('visible');
+      }
+    }
+  }
+
+  // Check scroll on page load and scroll
+  window.addEventListener('scroll', checkScroll);
+  window.addEventListener('load', checkScroll);
+
+  // Smooth scrolling for anchor links
+  var links = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

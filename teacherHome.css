@@ -1,0 +1,624 @@
+/* Reset & base styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 18px; /* base font size increased for user-friendliness */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #efefe7;
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header with logo centered - EXACT copy from adminHome */
+.header {
+  background: #88c34e;
+  border-bottom: 3px solid #9dd45e;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.menu-toggle {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #f0f0f0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-section img {
+  height: 60px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+/* Image Banner - EXACT copy from adminHome */
+.image-banner {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  margin: 0;
+  width: 100%;
+  margin-top: 80px
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  display: block;
+}
+
+/* Welcome message - EXACT copy from adminHome */
+.welcome-banner {
+  background: #f5f5ed;
+  color: #2c3e50;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  margin: 1rem;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  border: 2px solid #88c34e;
+}
+
+/* Layout - EXACT copy from adminHome */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 280px);
+}
+
+/* Sidebar with toggle functionality - EXACT copy from adminHome */
+.sidebar {
+  width: 300px;
+  background: #ffffff;
+  border-right: 3px solid #9dd45e;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  box-shadow: 5px 0 15px rgba(136, 195, 78, 0.05);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+  transform: translateX(-100%);
+  z-index: 60;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  background: #88c34e;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  box-shadow: 2px 0 10px rgba(136, 195, 78, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.sidebar-toggle:hover {
+  background: #76a33e;
+}
+
+.sidebar-profile {
+  text-align: center;
+  background: #fce4ec;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  box-shadow: 0 4px 20px rgba(244, 145, 186, 0.15);
+  border: 2px solid #f491ba;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.3);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a252f;
+}
+
+.profile-role {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.nav-section {
+  margin-bottom: 2rem;
+}
+
+.nav-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #34495e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  color: #34495e;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #9dd45e;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #f6f9f3;
+  color: #2c3e50;
+  transform: translateX(5px);
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+}
+
+.nav-links a:hover::before {
+  transform: scaleY(1);
+}
+
+.nav-links a.active {
+  background: #e8f5e8;
+  color: #2c3e50;
+  box-shadow: 0 8px 30px rgba(136, 195, 78, 0.2);
+  border: 2px solid #88c34e;
+}
+
+.nav-links a.active::before {
+  transform: scaleY(1);
+  background: rgba(255,255,255,0.3);
+}
+
+.nav-links a i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Main content - EXACT copy from adminHome */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+/* Page header - EXACT copy from adminHome */
+.page-header {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  border: 2px solid #fce4ec;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #88c34e;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: #34495e;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Stats grid - EXACT copy from adminHome */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #fce4ec;
+}
+
+.stat-card.teachers::before {
+  background: #e8f5e8;
+}
+
+.stat-card.parents::before {
+  background: #fce4ec;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(136, 195, 78, 0.2);
+  border-color: #fce4ec;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #34495e;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+}
+
+.stat-card.students .stat-icon {
+  background: #fce4ec;
+  color: #2c3e50;
+}
+
+.stat-card.teachers .stat-icon {
+  background: #e8f5e8;
+  color: #2c3e50;
+}
+
+.stat-card.parents .stat-icon {
+  background: #fce4ec;
+  color: #2c3e50;
+}
+
+/* Content sections - EXACT copy from adminHome */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+  position: relative;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.content-section:hover {
+  border-color: #88c34e;
+  box-shadow: 0 8px 30px rgba(136, 195, 78, 0.2);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(136, 195, 78, 0.15);
+}
+
+.quotes-section .section-icon {
+  background: #fce4ec;
+  color: #2c3e50;
+}
+
+.tips-section .section-icon {
+  background: #e8f5e8;
+  color: #2c3e50;
+}
+
+.calendar-section .section-icon {
+  background: #e8f5e8;
+  color: #2c3e50;
+}
+
+.birthday-section .section-icon {
+  background: #fce4ec;
+  color: #2c3e50;
+}
+
+.quote-content, .tip-content {
+  color: #34495e;
+  font-style: italic;
+  line-height: 1.8;
+  font-size: 1rem;
+  position: relative;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 16px;
+  border-left: 4px solid #fce4ec;
+}
+
+.tip-content {
+  border-left-color: #e8f5e8;
+}
+
+/* Date and birthday sections - EXACT copy from adminHome */
+.date-birthday-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.calendar-display {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border-radius: 16px;
+}
+
+.date-display {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #88c34e;
+}
+
+.birthday-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.birthday-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f5f5f5;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.birthday-item:hover {
+  background: #fce4ec;
+  transform: translateX(5px);
+}
+
+.birthday-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.birthday-info strong {
+  color: #f491ba;
+  font-weight: 700;
+}
+
+.birthday-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #f491ba;
+  object-fit: cover;
+}
+
+.no-birthday {
+  text-align: center;
+  color: #666666;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Mobile responsiveness - EXACT copy from adminHome */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(136, 195, 78, 0.3);
+  backdrop-filter: blur(5px);
+  z-index: 50;
+}
+
+.overlay.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: static;
+    margin-right: auto;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .logo-section {
+    order: 2;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+  }
+
+  .stats-grid, .content-grid, .date-birthday-row {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .welcome-banner {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .image-banner {
+    height: 150px;
+  }
+
+  .banner-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations - EXACT copy from adminHome */
+.stat-card, .content-section {
+  animation: slideUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print styles - EXACT copy from adminHome */
+@media print {
+  .sidebar, .menu-toggle, .overlay, .image-banner { display: none !important; }
+  .main-content { padding: 0; }
+  .stat-card, .content-section { 
+    break-inside: avoid; 
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
